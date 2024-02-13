@@ -55,9 +55,11 @@ contract CounterTest is Test {
 }
 
 ```
-## you have to get outbut like this after run command forge test
+### you have to get outbut like this after run command forge test
 
-![Screenshot from 2024-02-12 20-44-15](https://github.com/Mahmoud-Mourad-Dev/Foundry-test/assets/35864731/035a63bc-27db-496e-842c-17326b50cf8f)
+![Screenshot from 2024-02-13 20-51-58](https://github.com/Mahmoud-Mourad-Dev/Foundry-Test/assets/35864731/6e75cffb-2b4f-48ed-af42-0c06d77c385c)
+
+
 
 
 
