@@ -1,66 +1,64 @@
-## Foundry
+# Foundry-test
+### 1- Forge can run your tests with the forge test command
+### 2- All tests are written in Solidity.
+### 3- Forge will look for the tests anywhere in your source directory
+### 4- Any contract with a function that starts with test is considered to be a test
+### 5- Perfect! Let's start with a beginner-friendly example using a simple Counter Contract in Solidity
+### 6- This will help you learn the fundamentals of writing tests with Foundry.
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+```solidity
+// SPDX-License-Identifier: MIT
 
-Foundry consists of:
+pragma solidity ^0.8.0;
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+contract Counter {
+    uint256 public count;
 
-## Documentation
+    function increment() public {
+        count++;
+    }
+}
 
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
 ```
 
-### Test
+## Test-Script
+Contract: We'll define a simple contract named Counter that has a single function increment to increase a counter by 1
+Test: We'll write a test script named Counter.test.sol to test the functionality of the increment function.
 
-```shell
-$ forge test
+1- We import necessary utilities like Test from Foundry.
+
+2- We define a test contract CounterTest that inherits from Test.
+
+3- Use assertEq to check if the new value is equal to 1.
+
+
+
+```solidity
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "forge-std/Test.sol";
+import {Counter} from "../src/Counter.sol";
+
+contract CounterTest is Test {
+    Counter  counter;
+
+    function setUp() public {
+        counter = new Counter();
+    }
+
+    function testIncrement() public {
+        counter.increment();
+        assertEq(counter.count(), 1);
+    }
+}
+
 ```
+## you have to get outbut like this after run command forge test
 
-### Format
+![Screenshot from 2024-02-12 20-44-15](https://github.com/Mahmoud-Mourad-Dev/Foundry-test/assets/35864731/035a63bc-27db-496e-842c-17326b50cf8f)
 
-```shell
-$ forge fmt
-```
 
-### Gas Snapshots
 
-```shell
-$ forge snapshot
-```
 
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
