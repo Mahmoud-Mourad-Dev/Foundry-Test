@@ -58,6 +58,27 @@ contract CounterTest is Test {
 ### you have to get outbut like this after run command forge test
 
 ![Screenshot from 2024-02-13 20-51-58](https://github.com/Mahmoud-Mourad-Dev/Foundry-Test/assets/35864731/6e75cffb-2b4f-48ed-af42-0c06d77c385c)
+## Forge test
+![Forge-test](https://github.com/Mahmoud-Mourad-Dev/Foundry-Test/assets/35864731/ab1affac-3e9d-46e3-a28a-c085d727e599)
+
+
+#### You can also run specific tests by passing a filter to test one function from contract by this command line
+`forge test  --match-test testIncrement`
+
+![Screenshot from 2024-02-14 20-39-33](https://github.com/Mahmoud-Mourad-Dev/Foundry-Test/assets/35864731/7cb755c6-ff84-4224-a9e1-e37c28fc8b65)
+
+#### You can also run specific tests by passing a filter to test only contract by passing contract name by command
+`forge test --match-contract Counter`
+![Screenshot from 2024-02-14 20-44-14](https://github.com/Mahmoud-Mourad-Dev/Foundry-Test/assets/35864731/c137af67-1dff-4f21-af3b-08862bbc0e0f)
+#### run test by path command line
+`forge test --match-path test/Counter.t.sol`
+![Screenshot from 2024-02-14 20-49-33](https://github.com/Mahmoud-Mourad-Dev/Foundry-Test/assets/35864731/dafcc1a0-ba1d-4edc-979e-f83928d93b96)
+
+
+
+
+
+
 
 
 
